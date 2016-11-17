@@ -1,0 +1,538 @@
+@extends("layout.master")
+@section('title', 'Trang chủ')
+@section("menu")
+<div class="header-bottom color-div">
+	<div class="container">
+		<a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
+		<div class="visible-xs clearfix"></div>
+		<nav class="main-menu">
+			<ul class="l-inline ov">
+				<li><a href=".">Trang chủ</a>
+					<ul class="sub-menu">
+					@foreach($type as $t)
+						<li><a href="{{$t->id}}">{{$t->name}}</a></li>
+					@endforeach
+					</ul>
+				</li>
+				<li><a href="#">Pages</a>
+					<ul class="sub-menu">
+						<li><a href="about_1.html">About 1</a></li>
+						<li><a href="about_2.html">About 2</a></li>
+						<li><a href="testimonials.html">Testimonials</a></li>
+						<li><a href="text_page.html">Text Page</a></li>
+						<li><a href="typography.html">Typography</a></li>
+						<li><a href="accordion_toggles.html">Accordion and Toggles</a></li>
+						<li><a href="buttons.html">Buttons</a></li>
+						<li><a href="custom_callout_box.html">Custom Callout Box</a></li>
+						<li><a href="404.html">Page 404</a></li>
+						<li><a href="under_construction.html">Coming Soon</a></li>
+					</ul>
+				</li>
+				<li><a href="features.html">Features</a></li>
+				<li><a href="#">Portfolio</a>
+					<ul class="sub-menu">
+						<li><a href="portfolio_type_a.html">Portfolio type A</a></li>
+						<li><a href="#">Portfolio type B</a>
+							<ul class="sub-menu">
+								<li><a href="portfolio_2col.html">Portfolio B - 2 Columns</a></li>
+								<li><a href="portfolio_3col.html">Portfolio B - 3 Columns</a></li>
+								<li><a href="portfolio_4col.html">Portfolio B - 4 Columns</a></li>
+							</ul>
+						</li>
+						<li><a href="portfolio_single.html">Portfolio Item</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Blog</a>
+					<ul class="sub-menu">
+						<li><a href="blog_fullwidth_1col.html">Blog Full Width</a>
+							<ul class="sub-menu">
+								<li><a href="blog_fullwidth_2col.html">Blog Full Width - 2 Columns</a></li>
+								<li><a href="blog_fullwidth_3col.html">Blog Full Width - 3 Columns</a></li>
+								<li><a href="blog_fullwidth_4col.html">Blog Full Width - 4 Columns</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Blog Type A</a>
+							<ul class="sub-menu">
+								<li><a href="blog_with_sidebarleft_type_a.html">Blog A - Left Sidebar</a></li>
+								<li><a href="blog_with_sidebarright_type_a.html">Blog A - Right Sidebar</a></li>
+							</ul>
+						</li>
+						<li><a href="blog_with_sidebarleft_type_b.html">Blog Type B</a></li>
+						<li><a href="#">Blog Type C</a>
+							<ul class="sub-menu">
+								<li><a href="blog_with_sidebarleft_type_c.html">Blog C - Left Sidebar</a></li>
+								<li><a href="blog_with_sidebarleft_type_c_2cols.html">Blog C - 2 Columns</a></li>
+							</ul>
+						</li>
+						<li><a href="blog_with_sidebarleft_type_d.html">Blog Type D</a></li>
+						<li><a href="#">Blog Type E</a>
+							<ul class="sub-menu">
+								<li><a href="blog_with_sidebarleft_type_e.html">Blog E - Left Sidebar</a></li>
+								<li><a href="blog_with_2sidebars_type_e.html">Blog E - 2 Sidebars</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Blog Single Post</a></li>
+					</ul>
+				</li>
+				<li><a href="index.html">Shop</a>
+					<ul class="sub-menu">
+						<li><a href="index.html">Home Shop 1</a></li>
+						<li><a href="home_2.html">Home Shop 2</a></li>
+						<li><a href="home_3.html">Home Shop 3</a></li>
+						<li><a href="checkout.html">Checkout</a></li>
+						<li><a href="pricing.html">Pricing</a></li>
+						<li><a href="shopping_cart.html">Shopping Cart</a></li>
+						<li><a href="product.html">Product</a></li>
+					</ul>
+				</li>
+				<li><a href="contacts.html">Contact</a></li>
+			</ul>
+			<div class="clearfix"></div>
+		</nav>
+
+	</div> <!-- .container -->
+</div> <!-- .header-bottom -->
+@endsection
+@section("slide")
+<div class="rev-slider">
+	<div class="fullwidthbanner-container">
+		<div class="fullwidthbanner">
+			<div class="bannercontainer" >
+		    <div class="banner" >
+			<ul>
+				<!-- THE FIRST SLIDE -->
+				<li data-transition="boxfade" data-slotamount="20">
+                <img src="assets/dest/images/thumbs/slider2/banner2.jpg" alt="image"/>
+                <div class="caption lft"  data-x="50" data-y="40" data-speed="500" data-start="1200" data-customin="rotationZ:-720;scaleX:0.4;scaleY:0.4" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider2/layer1.png" alt="image" width="70%" style="border-radius:50%" /></div>
+                <div class="caption lfr"  data-x="700" data-y="100" data-speed="800" data-start="2000" data-easing="easeOutBack" style="font-size:50px;color:#1E90FF">Cupcake của tháng</div>
+				<div class="caption lfl"  data-x="650" data-y="260" data-speed="800" data-start="2800" data-easing="easeOutBack" style="font-size:30px;color:#6495ED;">Pumpkin Spice bánh đứng đầu với kem bơ</div>
+				
+                
+            </li>
+			<li data-transition="boxfade" data-slotamount="20">
+                <img src="assets/dest/images/thumbs/banner4.jpg" alt="background">
+
+                <div class="caption lft" data-x="80" data-y="280" data-speed="700" data-start="2100" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/slide5-1.png" alt="slider image" /></div>
+                <div class="caption lft" data-x="134" data-y="280" data-speed="700" data-start="2400" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/slide5-2.png" alt="slider image" /></div>
+                <div class="caption lft" data-x="190" data-y="280" data-speed="700" data-start="2700" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/slide5-3.png" alt="slider image" /></div>
+                <div class="caption lft regular_button" data-x="80" data-y="360" data-speed="700" data-start="2900" data-easing="easeOutBack">mua ngay</div>
+				 <div class="caption lfr" data-x="580" data-y="50" data-speed="700" data-start="3200" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/layer2.jpg" alt="slider image" style="border-radius:50%; border:solid 2px white" width="70%" /></div>
+            </li>
+			<li data-transition="boxfade" data-slotamount="20">
+                <img src="assets/dest/images/thumbs/banner1.jpg" alt="background">
+                <div class="caption lfl" data-x="90" data-y="50" data-speed="700" data-start="2500" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/slide3-2.jpg" alt="slider image" style="border-radius:50%;border:double 4px green " width="70%" /></div>
+				<div class="caption lfr"  data-x="660" data-y="120" data-speed="800" data-start="2000" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/layer2.png" alt="image"/></div>
+				<div class="caption lfr"  data-x="660" data-y="240" data-speed="800" data-start="2400" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/layer3.png" alt="image"/></div>
+				<div class="caption lfr"  data-x="660" data-y="288" data-speed="800" data-start="2800" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/layer4.png" alt="image"/></div>
+                
+            </li>
+			
+			<li data-transition="boxfade" data-slotamount="20">
+                <img src="assets/dest/images/thumbs/banner3.jpg" alt="background">
+
+                <div class="caption lfl"  data-x="80" data-y="120" data-speed="800" data-start="2000" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/layer2.png" alt="image"/></div>
+                <div class="caption lft" data-x="80" data-y="280" data-speed="700" data-start="2100" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/slide5-1.png" alt="slider image" /></div>
+                <div class="caption lft" data-x="134" data-y="280" data-speed="700" data-start="2400" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/slide5-2.png" alt="slider image" /></div>
+                <div class="caption lft" data-x="190" data-y="280" data-speed="700" data-start="2700" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/slide5-3.png" alt="slider image" /></div>
+                <div class="caption lft regular_button" data-x="80" data-y="360" data-speed="700" data-start="2900" data-easing="easeOutBack">buy theme</div>
+				 <div class="caption lfr" data-x="580" data-y="50" data-speed="700" data-start="3200" data-easing="easeOutBack"><img src="assets/dest/images/thumbs/slider3/slide3-3.jpg" alt="slider image" style="border-radius:45%; border:solid 2px #DA70D6" width="75%"/></div>
+            </li>
+			
+			</ul>
+			</div>
+			</div>
+
+			<div class="tp-bannertimer"></div>
+		</div>
+</div>
+@endsection
+<!--slider-->
+</div>
+@section("container")
+<div class="container">
+	<div id="content" class="space-top-none">
+		<div class="main-content">
+			<div class="space10">&nbsp;</div>
+
+			<div class="dg">
+				<div class="col-3 wow fadeInDown">
+					<div class="beta-banner">
+						<img src="assets/dest/images/banners/banner12.jpg" alt="">
+						<h2 
+							class="beta-banner-layer text-left"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 100,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"top" : [30, 30, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Sale</h2>
+						<p 
+							class="beta-banner-layer text-left"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 400,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"top" : [80, 80, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Nemo enim ipsam <br /> voluptatem quia</p>
+						<a 
+							class="beta-banner-layer beta-btn text-left banner-color" 
+							href="single_type_quote.html"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 300,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"bottom" : [25, 25, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Read More</a>
+					</div>
+				</div>
+				
+				<div class="col-3 wow fadeInDown">
+					<div class="beta-banner beta-banner-white">
+						<img src="assets/dest/images/banners/banner13.jpg" alt="">
+						<h2 
+							class="beta-banner-layer text-left"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 100,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"top" : [30, 30, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Special Offers</h2>
+						<p 
+							class="beta-banner-layer text-left"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 400,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"top" : [80, 80, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Nemo enim ipsam <br /> voluptatem quia</p>
+						<a 
+							class="beta-banner-layer beta-btn text-left beta-banner-white" 
+							href="single_type_quote.html"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 300,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"bottom" : [25, 25, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Read More</a>
+					</div>
+				</div>
+
+				<div class="col-3 wow fadeInDown">
+					<div class="beta-banner beta-banner-white">
+						<img src="assets/dest/images/banners/banner14.jpg" alt="">
+						<h2 
+							class="beta-banner-layer text-left"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 100,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"top" : [30, 30, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Free Shipping</h2>
+						<p 
+							class="beta-banner-layer text-left"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 400,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"top" : [80, 80, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Nemo enim ipsam <br /> voluptatem quia</p>
+						<a 
+							class="beta-banner-layer beta-btn text-left beta-banner-white" 
+							href="single_type_quote.html"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 300,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"bottom" : [25, 25, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Read More</a>
+					</div>
+				</div>
+
+				<div class="col-3 wow fadeInDown">
+					<div class="beta-banner beta-banner-white">
+						<img src="assets/dest/images/banners/banner15.jpg" alt="">
+						<h2 
+							class="beta-banner-layer text-left"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 100,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"top" : [30, 30, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>New Arrivals</h2>
+						<p 
+							class="beta-banner-layer text-left"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 400,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"top" : [80, 80, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Nemo enim ipsam <br /> voluptatem quia</p>
+						<a 
+							class="beta-banner-layer beta-btn text-left beta-banner-white" 
+							href="single_type_quote.html"
+							data-animo='{
+								"duration" : 1000,
+								"delay" : 300,
+								"easing" : "easeOutSine",
+								"template" : {
+									"opacity" : [0, 1],
+									"bottom" : [25, 25, "px"],
+									"left" : [-300, 70, "px"]
+								}
+							}'
+						>Read More</a>
+					</div>
+				</div>
+			</div> <!-- under slider 4 banners -->
+			
+			<div class="space60">&nbsp;</div>
+			<div class="row">
+				
+				</div> <!-- .aside -->
+				<div class="col-sm-12">
+					<div class="beta-products-list">
+						<h4>New Products</h4>
+						<div class="beta-products-details">
+							<p class="pull-left">{{$data->count()}} styles found | <a href="#">View all</a></p>
+							<p class="pull-right">
+								<span class="sort-by">Sort by </span>
+								<select name="sortproducts" class="beta-select-primary">
+									<option value="desc">Latest</option>
+									<option value="popular">Popular</option>
+									<option value="rating">Rating</option>
+									<option value="best">Best</option>
+								</select>
+							</p>
+							<div class="clearfix"></div>
+						</div>
+						
+						<div class="row">
+						@foreach($data as $item)
+							<div class="col-md-4">
+								<div class="single-item">
+								@if($item->new_product==1)
+									<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+								@endif
+									<div class="single-item-header">
+										<a href="product.html"><img src="assets/dest/images/products/{{$item->image}}" alt="" height="250px"></a>
+									</div>
+									<div class="single-item-body">
+										<p class="single-item-title">{{$item->name}}</p>
+										<p class="single-item-price">
+											<span class="flash-del">{{$item->unit_price}}</span>
+											<span class="flash-sale">{{$item->promotion_price}}</span>
+										</p>
+									</div>
+									<div class="single-item-caption">
+										<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+						@endforeach
+						</div>
+						<div class="row">
+							<div class="col-md-3"></div> 
+							<div class="col-md-6">{{$data->links()}}</div> 
+							<div class="col-md-3"></div> 
+						</div>
+					</div> <!-- .beta-products-list -->
+
+					<div class="space50">&nbsp;</div>
+
+					<div class="beta-products-list">
+						<h4>Top Products</h4>
+
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="single-item">
+									<div class="single-item-header">
+										<a href="product.html"><img src="assets/dest/images/products/home_3/4.jpg" alt=""></a>
+									</div>
+									<div class="single-item-body">
+										<p class="single-item-title">Sample Woman Top</p>
+										<p class="single-item-price">
+											<span>$34.55</span>
+										</p>
+									</div>
+									<div class="single-item-caption">
+										<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="single-item">
+									<div class="single-item-header">
+										<a href="product.html"><img src="assets/dest/images/products/home_3/5.jpg" alt=""></a>
+									</div>
+									<div class="single-item-body">
+										<p class="single-item-title">Sample Woman Top</p>
+										<p class="single-item-price">
+											<span>$34.55</span>
+										</p>
+									</div>
+									<div class="single-item-caption">
+										<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="single-item">
+									<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+
+									<div class="single-item-header">
+										<a href="product.html"><img src="assets/dest/images/products/home_3/6.jpg" alt=""></a>
+									</div>
+									<div class="single-item-body">
+										<p class="single-item-title">Sample Woman Top</p>
+										<p class="single-item-price">
+											<span class="flash-del">$34.55</span>
+											<span class="flash-sale">$33.55</span>
+										</p>
+									</div>
+									<div class="single-item-caption">
+										<a class="add-to-cart pull-left" href="shopping_cart.html#"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="space40">&nbsp;</div>
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="single-item">
+									<div class="ribbon-wrapper"><div class="ribbon">New!</div></div>
+
+									<div class="single-item-header">
+										<a href="product.html"><img src="assets/dest/images/products/home_3/7.jpg" alt=""></a>
+									</div>
+									<div class="single-item-body">
+										<p class="single-item-title">Sample Woman Top</p>
+										<p class="single-item-price">
+											<span>$34.55</span>
+										</p>
+									</div>
+									<div class="single-item-caption">
+										<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="single-item">
+									<div class="single-item-header">
+										<a href="product.html"><img src="assets/dest/images/products/home_3/8.jpg" alt=""></a>
+									</div>
+									<div class="single-item-body">
+										<p class="single-item-title">Sample Woman Top</p>
+										<p class="single-item-price">
+											<span>$34.55</span>
+										</p>
+									</div>
+									<div class="single-item-caption">
+										<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="single-item">
+									<div class="single-item-header">
+										<a href="product.html"><img src="assets/dest/images/products/home_3/3.jpg" alt=""></a>
+									</div>
+									<div class="single-item-body">
+										<p class="single-item-title">Sample Woman Top</p>
+										<p class="single-item-price">
+											<span>$34.55</span>
+										</p>
+									</div>
+									<div class="single-item-caption">
+										<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> <!-- .beta-products-list -->
+				</div> 
+			</div> <!-- end section with sidebar and main content -->		
+
+
+		</div> <!-- .main-content -->
+	</div> <!-- #content -->
+</div>
+<style>
+.pagination li a{
+	background-color:#FFDFE0;
+}
+.pagination > .active > span{
+
+}
+
+</style>
+@endsection
