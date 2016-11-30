@@ -8,7 +8,7 @@ var upload = multer({
 });
 
 /*GET*/
-router.get('/getNewProduct:trang', FilesController.getNewProduct);
+router.get('/getNewProduct/:trang', FilesController.getNewProduct);
 router.get('/getTypes', FilesController.getTypes);
 router.get('/getProduct/:productId', FilesController.getProduct);
 router.get('/getProductType/:typeId/:trang', FilesController.getProductType);
