@@ -4,13 +4,16 @@ var conString = configDB.url;
 var client = new pg.Client(conString);
 
 exports.getNewProduct = function(req, res,callback) {
+  var sosp1trang=10;
+  var trangdangxem = req.params.trang;
+  var off = (trangdangxem - 1) * sosp1trang;
   var products= [];
   pg.connect(conString,function(err,client,done){
     if(err){
       console.error('error running query', err);
       return callback(err);
     }
-    client.query('select id,name,image,unit_price,promotion_price, created_at from products order by created_at DESC',function(err,result){
+    client.query('select id,name,image,unit_price,promotion_price, created_at from products  LIMIT ' +sosp1trang+ ' OFFSET '+off+ ' order by created_at DESC',function(err,result){
 
       if(err){
         console.log('err')
@@ -75,13 +78,41 @@ exports.getProduct = function(req,res,callback){
 }
 exports.getProductType = function(req,res,callback){
   var typeId = req.params.typeId;
+  var sosp1trang=10;
+  var trangdangxem = req.params.trang;
+  var off = (trangdangxem - 1) * sosp1trang;
   var products = [];
   pg.connect(conString,function(err,client,done){
     if(err){
       console.error('error running query', err);
       return callback(err);
     }
-    client.query('select p.id_type ,p.name,p.image,p.unit_price,p.promotion_price from products p inner join type_products t on p.id_type = t.id where t.id =   '+ productId,function(err,result){
+    client.query('select p.id_type ,p.name,p.image,p.unit_price,p.promotion_price from products p inner join type_products t on p.id_type = t.id where t.id =  ' +typeId+ ' LIMIT ' +socon1trang+ ' OFFSET '+off,function(err,result){
+
+      if(err){
+        console.log('err')
+        return callback(err);
+      }
+        {
+          result.rows.forEach(function(sp){
+            products.push(sp)
+          })
+          return res.json({products});
+        }
+        done();
+    });
+  });
+};
+exports.getProductBySearch = function(req,res,callback){
+  var txtSp = req.body.txtSp.toLowerCase();
+  var products = [];
+
+  pg.connect(conString,function(err,client,done){
+    if(err){
+      console.error('error running query', err);
+      return callback(err);
+    }
+    client.query("select id, name, unit_price, image,updated_at,promotion_price  from products where name LIKE '%" +txtSp+ "%'" ,function(err,result){
 
       if(err){
         console.log('err')
