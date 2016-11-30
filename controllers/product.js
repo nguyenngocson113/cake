@@ -13,7 +13,7 @@ exports.getNewProduct = function(req, res,callback) {
       console.error('error running query', err);
       return callback(err);
     }
-    client.query('select id,name,image,unit_price,promotion_price, created_at from products  LIMIT ' +sosp1trang+ ' OFFSET '+off+ ' order by created_at DESC',function(err,result){
+    client.query('select id,name,image,unit_price,promotion_price, created_at from products order by created_at DESC LIMIT ' +sosp1trang+ ' OFFSET ' +off,function(err,result){
 
       if(err){
         console.log('err')
@@ -87,7 +87,7 @@ exports.getProductType = function(req,res,callback){
       console.error('error running query', err);
       return callback(err);
     }
-    client.query('select p.id_type ,p.name,p.image,p.unit_price,p.promotion_price from products p inner join type_products t on p.id_type = t.id where t.id =  ' +typeId+ ' LIMIT ' +socon1trang+ ' OFFSET '+off,function(err,result){
+    client.query('select p.id_type ,p.name,p.image,p.unit_price,p.promotion_price from products p inner join type_products t on p.id_type = t.id where t.id =  '+typeId+' LIMIT '+sosp1trang+' OFFSET '+off,function(err,result){
 
       if(err){
         console.log('err')
@@ -104,7 +104,7 @@ exports.getProductType = function(req,res,callback){
   });
 };
 exports.getProductBySearch = function(req,res,callback){
-  var txtSp = req.body.txtSp.toLowerCase();
+  var txtSp = req.body.txtSp;
   var products = [];
 
   pg.connect(conString,function(err,client,done){
