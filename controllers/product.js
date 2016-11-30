@@ -36,7 +36,7 @@ exports.getTypes = function(req,res,callback){
       console.error('error running query', err);
       return callback(err);
     }
-    client.query('select name,image from type_products ',function(err,result){
+    client.query('select id,name,image,description from type_products ',function(err,result){
 
       if(err){
         console.log('err')
