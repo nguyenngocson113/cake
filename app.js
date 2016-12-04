@@ -39,6 +39,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Apply routes
 app.use('/', require('./routes/product'));
+app.use('/', require('./routes/bill'));
+
 // app.use('/users', require('./routes/users'));
 // app.use('/friends', require('./routes/friends'));
 // app.use('/socketio', require('./routes/socketio'));
