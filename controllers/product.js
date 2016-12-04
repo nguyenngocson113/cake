@@ -128,3 +128,52 @@ exports.getProductBySearch = function(req,res,callback){
     });
   });
 }
+exports.getProductViewMost = function(req, res,callback) {
+  var sosp1trang=10;
+  var trangdangxem = req.params.trang;
+  var off = (trangdangxem - 1) * sosp1trang;
+  var products= [];
+  pg.connect(conString,function(err,client,done){
+    if(err){
+      console.error('error running query', err);
+      return callback(err);
+    }
+    client.query('select id,name,image,unit_price,promotion_price, created_at, view from products order by view DESC LIMIT ' +sosp1trang+ ' OFFSET ' +off,function(err,result){
+
+      if(err){
+        console.log('err')
+        return callback(err);
+      }
+        {
+          result.rows.forEach(function(sp){
+            products.push(sp);
+          })
+          return res.json({products})
+        }
+        done();
+    });
+  });
+}
+exports.getProducts = function(req, res,callback) {
+  var products= [];
+  pg.connect(conString,function(err,client,done){
+    if(err){
+      console.error('error running query', err);
+      return callback(err);
+    }
+    client.query('select name from products ',function(err,result){
+
+      if(err){
+        console.log('err')
+        return callback(err);
+      }
+        {
+          result.rows.forEach(function(sp){
+            products.push(sp);
+          })
+          return res.json({products})
+        }
+        done();
+    });
+  });
+}
