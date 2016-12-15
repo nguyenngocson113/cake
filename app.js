@@ -9,7 +9,7 @@ var app = express();
 
 // Connect to database
 var pg = require('pg')
-var configDB = require('./model/database.js');
+// var configDB = require('./model/database.js');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

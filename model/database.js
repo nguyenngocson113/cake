@@ -1,6 +1,13 @@
 // config/database.js
 module.exports = {
 
-url: "postgres://postgres:1@localhost:5432/cookie",
-
-};
+	config : {
+	  user: 'postgres', //env var: PGUSER
+	  database: 'cookie', //env var: PGDATABASE
+	  password: '1', //env var: PGPASSWORD
+	  host: 'localhost', // Server hosting the postgres database
+	  port: 5432, //env var: PGPORT
+	  max: 10, // max number of clients in the pool
+	  idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
+	}
+}
