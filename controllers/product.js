@@ -26,7 +26,7 @@ exports.getNewProduct = function(req, res, next) {
       });
 
       return res.json({products})
-      
+
     });
   });
 
@@ -40,7 +40,7 @@ exports.getTypes = function(req, res, next){
     }
     client.query('select id,name,image,description from type_products ', function(err, result) {
       done();
-      
+
       if(err) {
         console.log('err')
         return next(err);
@@ -48,9 +48,9 @@ exports.getTypes = function(req, res, next){
       result.rows.forEach(function(type){
           types.push(type)
       });
-      
+
       return res.json({types});
-    
+
     });
   });
 }
@@ -64,7 +64,7 @@ exports.getProduct = function(req, res, next){
     }
     client.query('select id,name,image, description from products where id= '+ productId,function(err,result){
       done();
-      
+
       if(err) {
         console.log('err')
         return next(err);
@@ -73,7 +73,7 @@ exports.getProduct = function(req, res, next){
       result.rows.forEach(function(sp){
         product.push(sp)
       });
-      return res.json({product});  
+      return res.json({product});
 
     });
   });
@@ -101,9 +101,9 @@ exports.getProductType = function(req, res, next){
       result.rows.forEach(function(sp){
         products.push(sp)
       });
-      
+
       return res.json({products});
-        
+
     });
   });
 };
@@ -123,12 +123,12 @@ exports.getProductBySearch = function(req, res, next){
         console.log('err')
         return next(err);
       }
-      
+
       result.rows.forEach(function(sp){
         products.push(sp)
-      });    
-      
-      return res.json({products});   
+      });
+
+      return res.json({products});
     });
   });
 }
@@ -149,7 +149,7 @@ exports.getProductViewMost = function(req, res, next) {
         console.log('err')
         return next(err);
       }
-      
+
       result.rows.forEach(function(sp){
          products.push(sp);
       });
@@ -160,7 +160,7 @@ exports.getProductViewMost = function(req, res, next) {
 }
 exports.getProducts = function(req, res, next) {
   var products= [];
-  pool.connect(conString,function(err,client,done){
+  pool.connect(function(err,client,done){
     if(err){
       console.error('error running query', err);
       return next(err);
@@ -177,7 +177,7 @@ exports.getProducts = function(req, res, next) {
       result.rows.forEach(function(sp){
             products.push(sp);
       });
-      
+
       return res.json({products})
     });
   });
