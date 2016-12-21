@@ -14,7 +14,7 @@ exports.getNewProduct = function(req, res, next) {
       return next(err);
     }
 
-    client.query('select id,name,image,unit_price,promotion_price, 'createdAt' from products order by 'createdAt' DESC LIMIT ' +sosp1trang+ ' OFFSET ' +off,function(err,result){
+    client.query('select id,name,image,unit_price,promotion_price, "createdAt" from products order by "createdAt" DESC LIMIT ' +sosp1trang+ ' OFFSET ' +off,function(err,result){
       done();
 
       if(err){
