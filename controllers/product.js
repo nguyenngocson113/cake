@@ -14,7 +14,7 @@ exports.getNewProduct = function(req, res, next) {
       return next(err);
     }
 
-    client.query('select id,name,image,unit_price,promotion_price, created_at from products order by created_at DESC LIMIT ' +sosp1trang+ ' OFFSET ' +off,function(err,result){
+    client.query('select id,name,image,unit_price,promotion_price, createdAt from products order by createdAt DESC LIMIT ' +sosp1trang+ ' OFFSET ' +off,function(err,result){
       done();
 
       if(err){
@@ -142,7 +142,7 @@ exports.getProductViewMost = function(req, res, next) {
       console.error('error running query', err);
       return next(err);
     }
-    client.query('select id,name,image,unit_price,promotion_price, created_at, view from products order by view DESC LIMIT ' +sosp1trang+ ' OFFSET ' +off,function(err,result){
+    client.query('select id,name,image,unit_price,promotion_price, createdAt, view from products order by view DESC LIMIT ' +sosp1trang+ ' OFFSET ' +off,function(err,result){
       done();
 
       if(err){
