@@ -116,7 +116,7 @@ exports.getProductBySearch = function(req, res, next){
       console.error('error running query', err);
       return next(err);
     }
-    client.query('select id, name, unit_price, image, "updatedAt" ,promotion_price  from products where name LIKE "% '+txtSp+' %" ',function(err,result){
+    client.query('select id, name, unit_price, image, "updatedAt" ,promotion_price  from products where name LIKE % '+txtSp+' % ',function(err,result){
 
       done();
       if(err){
