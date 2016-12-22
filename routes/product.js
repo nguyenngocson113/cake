@@ -18,7 +18,7 @@ router.get('/getProducts', FilesController.getProducts);
 //
 // /*POST*/
 // router.post('/uploadFile',upload.single('file'), FilesController.uploadFile);
-router.post('/getProductBySearch', FilesController.getProductBySearch);// search
+router.get('/getProductBySearch', FilesController.getProductBySearch);// search
 
 //
 // router.param('fileId', FilesController.queryFile);
