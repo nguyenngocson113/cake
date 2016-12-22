@@ -89,7 +89,7 @@ exports.getProductType = function(req, res, next){
       console.error('error running query', err);
       return next(err);
     }
-    client.query('select p.id ,t.id,p.name,p.image,p.unit_price,p.promotion_price from products p inner join type_products t on p.id_type = t.id where t.id =  '+typeId+' LIMIT '+sosp1trang+' OFFSET '+off,function(err,result){
+    client.query('select p.id,p.name,p.image,p.unit_price,p.promotion_price from products p inner join type_products t on p.id_type = t.id where t.id =  '+typeId+' LIMIT '+sosp1trang+' OFFSET '+off,function(err,result){
 
       done();
 
