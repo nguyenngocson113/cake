@@ -89,7 +89,7 @@ exports.getProductType = function(req, res, next){
       console.error('error running query', err);
       return next(err);
     }
-    client.query('select p.id ,p.name,p.image,p.unit_price,p.promotion_price from products p inner join type_products t on p.id_type = t.id where t.id =  '+typeId+' LIMIT '+sosp1trang+' OFFSET '+off,function(err,result){
+    client.query('select p.id_type ,p.name,p.image,p.unit_price,p.promotion_price from products p inner join type_products t on p.id_type = t.id where t.id =  '+typeId+' LIMIT '+sosp1trang+' OFFSET '+off,function(err,result){
 
       done();
 
@@ -116,7 +116,7 @@ exports.getProductBySearch = function(req, res, next){
       console.error('error running query', err);
       return next(err);
     }
-    client.query('select id, name, unit_price, image, "updatedAt" ,promotion_price  from products where name LIKE "%Bánh%" ' ,function(err,result){
+    client.query('select id, name, unit_price, image,promotion_price  from products where name LIKE '+ "'%"+txtSp+"%'" ,function(err,result){
 
       done();
       if(err){
