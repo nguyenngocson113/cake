@@ -62,7 +62,7 @@ exports.getProduct = function(req, res, next){
       console.error('error running query', err);
       return next(err);
     }
-    client.query('select id,name,image, description from products where id= '+ productId,function(err,result){
+    client.query('select id, name, image, unit_price, promotion_price, description from products where id= '+ productId,function(err,result){
       done();
 
       if(err) {
