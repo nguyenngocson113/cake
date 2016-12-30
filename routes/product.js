@@ -15,11 +15,14 @@ router.get('/getProductType/:typeId/:trang', FilesController.getProductType);//d
 router.get('/getProductViewMost/:trang', FilesController.getProductViewMost);
 router.get('/getProducts', FilesController.getProducts);
 
+
 //
 // /*POST*/
 // router.post('/uploadFile',upload.single('file'), FilesController.uploadFile);
 router.post('/getProductBySearch', FilesController.getProductBySearch);// search
 
+// post sản phẩm đã được mua
+router.post('/productBuy', FilesController.productBuy);
 //
 // router.param('fileId', FilesController.queryFile);
 function isLoggedIn(req, res, next) {

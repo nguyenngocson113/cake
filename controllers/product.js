@@ -1,6 +1,8 @@
 var pg = require('pg');
 var configDB = require('../model/database.js');
 
+var pgp = require('pg-promise')();
+
 var pool = new pg.Pool(configDB.config);
 
 exports.getNewProduct = function(req, res, next) {
@@ -182,3 +184,53 @@ exports.getProducts = function(req, res, next) {
     });
   });
 }
+
+
+exports.productBuy = function(req, res, next) {
+
+    pool.connect(function(err, client, done) {
+      if (err) {
+        console.error('error running query', err);
+        next(err);
+      }
+      client.query('Insert into bills (name, email, address, phone, total) values ($1, $2, $3, $4, $5) RETURNING id',
+          [req.body.name, req.body.email, req.body.address, req.body.phone, req.body.total], function(err, result) {
+
+          if (err) {
+            next(err);
+          } else {
+            var idBill = result.rows[0].id;
+            var products = req.body.products;
+
+            products.forEach(product => {
+              product.idBill = idBill*1;
+            });
+
+            // performance-optimized, reusable set of columns:
+            var tb = new pgp.helpers.ColumnSet(['idBill', 'idProduct', 'quality', 'price'], {table: 'detailBills'});
+
+            // generating a multi-row insert query:
+            var query = pgp.helpers.insert(products, tb);
+
+            // executing the query:
+            client.query(query)
+                .then(data => {
+                    done();
+                    res.json({
+                      success: true,
+                      data: {}
+                    });
+
+                })
+                .catch(error => {
+                    done();
+                    res.json({
+                      success: false,
+                      data: {}
+                    });
+                });
+
+          }
+      });
+    });
+};
